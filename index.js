@@ -15,7 +15,7 @@ module.exports = function () {
 
 		duplex.unpipe();
 
-		spawn(process.argv.unshift(), process.argv, { stdio: 'inherit' });
+		spawn(process.argv.shift(), process.argv, { stdio: 'inherit' });
 
 		process.exit(0);
 
