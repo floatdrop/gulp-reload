@@ -1,5 +1,5 @@
 # gulp-reload
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]  [![Coverage Status](coveralls-image)](coveralls-url) [![Dependency Status][depstat-image]][depstat-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url]
 > reload plugin for [gulp](https://github.com/wearefractal/gulp)
 
 __Experimental__ plugin, that will restart the current task (I hope so).
