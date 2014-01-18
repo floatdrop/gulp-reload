@@ -12,9 +12,7 @@ var filter = require('gulp-filter');
 
 gulp.src(['gulpfile.js', './src/*.ext'])
 	.pipe(watch({ passThrough: false }))
-	.pipe(filter('!gulpfile.js'))
 	.pipe(reload())
-	.pipe(filter.end())
 	.pipe(gulp.dest('./dist'));
 ```
 
