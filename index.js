@@ -2,8 +2,7 @@
 
 var gutil = require('gulp-util'),
 	Duplex = require('stream').Duplex,
-	path = require('path'),
-	spawn = require('child_process').spawn;
+	path = require('path');
 
 module.exports = function () {
 	var duplex = new Duplex({ objectMode: true, allowHalfOpen: true });
@@ -15,7 +14,7 @@ module.exports = function () {
 
 		duplex.unpipe();
 
-		spawn(process.argv.shift(), process.argv, { stdio: 'inherit' });
+		require('shelljs').exec(process.argv.join(' '));
 
 		process.exit(0);
 
