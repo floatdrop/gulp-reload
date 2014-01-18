@@ -11,7 +11,7 @@ var reload = require('gulp-reload');
 var filter = require('gulp-filter');
 
 gulp.src(['gulpfile.js', './src/*.ext'])
-	.pipe(watch())
+	.pipe(watch({ passThrough: false }))
 	.pipe(filter('gulpfile.js'))
 	.pipe(reload())
 	.pipe(filter.end())
