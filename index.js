@@ -6,15 +6,15 @@ var gutil = require('gulp-util'),
 
 module.exports = function () {
 	return through2.obj(function (file, encoding, done) {
-		this.push(file);
-
-		if (!(/gulpfile.js/).test(file.path)) { return; }
+		if (!(/gulpfile.js/).test(file.path)) {
+			this.push(file);
+			done();
+			return;
+		}
 
 		gutil.log('gulp-reload saw',
 			gutil.colors.magenta(path.basename(file.path)),
 			'and reloading now');
-
-		this.unpipe();
 
 		if (!process.env.RELOAD) {
 			while (true) {
@@ -24,6 +24,5 @@ module.exports = function () {
 
 		process.exit(0);
 
-		done();
 	});
 };
