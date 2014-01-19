@@ -8,11 +8,11 @@ __Experimental__ plugin, that will restart the current task (I hope so).
 
 ```javascript
 var reload = require('gulp-reload');
-var filter = require('gulp-filter');
+var _if = require('gulp-if');
 
 gulp.src(['gulpfile.js', './src/*.ext'])
 	.pipe(watch({ passThrough: false }))
-	.pipe(reload())
+	.pipe(_if(/gulpfile.js/, reload()))
 	.pipe(gulp.dest('./dist'));
 ```
 
